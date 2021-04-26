@@ -69,8 +69,8 @@ class _MyAppState extends State<MyApp> {
               Input(etCelcius: etCelcius),
               DropdownKonversi(
                   item: item, newValue: _newValue, dropdownOnChanged: dropdown),
-              Result(result: _result),
               Convert(konvertHandler: _konversiSuhu),
+              Result(result: _result),
               Container(
                 margin: EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
