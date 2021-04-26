@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'input.dart';
 import 'convert.dart';
-import 'dropdown.dart';
-import 'riwayat.dart';
 import 'result.dart';
 
 void main() {
@@ -42,13 +40,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void dropdown(String changeValue) {
-    setState(() {
-      _newValue = changeValue;
-      _konversiSuhu();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,18 +58,8 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Input(etCelcius: etCelcius),
-              DropdownKonversi(
-                  item: item, newValue: _newValue, dropdownOnChanged: dropdown),
-              Convert(konvertHandler: _konversiSuhu),
               Result(result: _result),
-              Container(
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  "Riwayat Hasil Konversi",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              Expanded(child: RiwayatKonversi(listViewItem: listViewItem))
+              Convert(konvertHandler: _konversiSuhu),
             ],
           ),
         ),
